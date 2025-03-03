@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 120px; /* Espaço para o header */
+    padding-top: 80px; /* Ajustado para dispositivos móveis */
 }
 
 /* Header fixo */
@@ -19,7 +19,7 @@ header {
     width: 100%;
     background: white;
     text-align: center;
-    padding: 1px 0;
+    padding: 10px 0;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -27,7 +27,7 @@ header {
 }
 
 header img {
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
 }
 
@@ -75,6 +75,13 @@ p {
     background-color: #b71c1c;
 }
 
+/* Imagem responsiva */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
 /* PDF incorporado */
 .pdf-viewer {
     width: 100%;
@@ -94,4 +101,48 @@ footer {
     bottom: 0;
     left: 0;
     font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    header img {
+        max-width: 120px;
+    }
+
+    .article-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .pdf-viewer {
+        height: 400px;
+    }
+
+    .download-button {
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+
+    header img {
+        max-width: 100px;
+    }
+
+    .pdf-viewer {
+        height: 300px;
+    }
+
+    .download-button {
+        width: 100%;
+        padding: 10px;
+    }
 }
