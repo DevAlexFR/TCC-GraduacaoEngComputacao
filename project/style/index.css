@@ -1,0 +1,97 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px; /* Espaço para o header */
+}
+
+/* Header fixo */
+header {
+    width: 100%;
+    background: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Estrutura do artigo */
+.article-container {
+    background: white;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 50px; /* Para não colar no rodapé */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Botão de download */
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: #d32f2f; /* Cor do PDF */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+.download-button:hover {
+    background-color: #b71c1c;
+}
+
+/* PDF incorporado */
+.pdf-viewer {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    border: none;
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+}
