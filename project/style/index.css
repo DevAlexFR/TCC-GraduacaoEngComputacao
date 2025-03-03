@@ -8,21 +8,22 @@
 
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background-color: #232424;
+    background-color: #232424 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
     line-height: 1.6;
-    margin-bottom: 80px; /* Espaço para o footer */
+    min-height: 100vh;
+    margin-bottom: 80px;
 }
 
 /* Header Fixo Otimizado */
 header {
     width: 100%;
     height: 10%;
-    background: #000000;
-    padding: 1rem 2%;
+    background: #000000 !important;
+    padding: 1rem 5%;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -33,16 +34,23 @@ header {
     align-items: center;
 }
 
-header img:first-child {
-    max-width: 8%;
+header img:first-child,
+header img:last-child {
+    max-width: 60px;
+    width: auto;
     height: auto;
-    margin-left: 2%;
 }
 
-header img:last-child {
-    max-width: 7%;
-    height: auto;
-    margin-right: 2%;
+header h1 {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    text-align: center;
+    line-height: 1.3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 /* Container Principal */
@@ -54,6 +62,7 @@ header img:last-child {
     margin: 1.5rem auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
 h1 {
@@ -62,26 +71,6 @@ h1 {
     font-size: 2.4rem;
     font-weight: 700;
     text-align: center;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
-        padding: 0.3rem 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-    }
-    
-    h1::after {
-        width: 80%;
-        height: 3px;
-    }
 }
 
 .author-info {
@@ -96,7 +85,6 @@ h1 {
     gap: 20px;
 }
 
-/* Botão de Download Moderno */
 .download-button {
     display: inline-flex;
     align-items: center;
@@ -118,15 +106,15 @@ h1 {
     background: linear-gradient(135deg, #c0392b, #a93226);
 }
 
-/* Imagem Responsiva */
 .content-image {
     max-width: 100%;
     height: auto;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
+    display: block;
     border-radius: 8px;
+    padding: 0 15px;
 }
 
-/* Document Viewer */
 .doc-container {
     width: 100%;
     height: 90vh;
@@ -147,7 +135,6 @@ h1 {
     overflow: hidden;
 }
 
-/* Footer Atualizado */
 footer {
     width: 100%;
     background: #000000;
@@ -170,16 +157,17 @@ footer {
 
 .social-links img {
     transition: transform 0.3s ease;
+    max-width: 120px;
 }
 
 .social-links img:hover {
     transform: scale(1.15);
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
     body {
         padding-top: 70px;
+        padding-bottom: 120px;
     }
 
     .article-container {
@@ -208,74 +196,40 @@ footer {
         border-right: none;
     }
 
-    footer {
-        position: relative;
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    header img {
-        max-width: 140px;
+    .content-image {
+        max-width: 90%;
     }
 
-    .author-info {
-        padding: 1rem;
-        font-size: 0.95rem;
+    header {
+        padding: 0.8rem 3%;
     }
 
-    .download-button {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-
-    .doc-container {
-        height: 70vh;
-    }
-}
-/* Novo CSS para o header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-}
-
-header h1 {
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 0 2rem;
-    flex: 1;
-}
-
-/* Ajuste das imagens do header */
-header img:first-child {
-    max-width: 8%;
-    height: auto;
-}
-
-header img:last-child {
-    max-width: 7%;
-    height: auto;
-}
-
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.2rem;
-        margin: 0 1rem;
-    }
-}
-
-@media (max-width: 480px) {
     header h1 {
         font-size: 1rem;
-        line-height: 1.2;
+        margin: 0 0.3rem;
     }
-    
+
     header img:first-child,
     header img:last-child {
-        max-width: 15%;
+        max-width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .doc-container {
+        height: 60vh;
+        margin: 1rem 0;
+    }
+
+    .doc-viewer {
+        zoom: 0.8;
+    }
+
+    .social-links img {
+        max-width: 100px;
+    }
+
+    header h1 {
+        font-size: 0.9rem;
     }
 }
